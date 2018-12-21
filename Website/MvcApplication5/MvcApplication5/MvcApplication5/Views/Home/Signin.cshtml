@@ -1,0 +1,24 @@
+@{
+    ViewBag.Title = "Sign in";
+    }
+<link rel="stylesheet" href="/Content/style.css">
+<style>
+    body,article{
+        background:url(/Content/image/background.jpg);
+        margin:0px;
+    }
+    </style>
+  
+
+<article style="margin-left:6%;margin-right:8%;width:87%;height:66%">
+
+<center style="font-size:40px;margin-top: 20px;color:white">Sign in</center>
+    <div id="login">
+      <form name='form-login' action="/Home/SigninCheck" method="POST">
+          <input style="width:280px" type="text" name="email" id="email" placeholder="Email" required>
+          <input style="width:280px" type="password" name="password" id="pass" placeholder="Password" required>
+          <input id="signin" style="margin-top: 5px"  type="submit" value="Signin">
+      </form>
+    </div>    
+  <br><br>
+</article>

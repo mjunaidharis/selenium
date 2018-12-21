@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Movie";
+}
+
+@model MvcApplication5.Models.Movy
+
+
+<article style="margin-left:6%;margin-right:8%;width:87%">
+        <center><div><h1 style="font-size:30px">@Model.name</h1></div></center>
+        <img class="image" src="@Model.picture" alt="" style="margin-right:10px;border-radius:5px;width:250px;height:250px;float:right">           
+        <div style="font-size:30px">Movie Overview</div><br/>
+        <div style="font-size:20px">@Model.review</div><br/>
+        <div style="font-size:30px">Movie Detail</div><br/>
+        <div style="font-size:20px">
+            <b>Name:</b>  @Model.name<br/>
+            <b>Year:</b>  @Model.year<br/>
+            <b>Cast:</b>  @Model.cast<br/>
+            <b>Rating:</b>  @Model.rating<br/>
+            <b>Type:</b>  @Model.language<br/>
+        </div><br/>
+        <center>
+        <div style="font-size:30px">Movie Trailer</div><br/>
+
+        <iframe width="600" height="400" src="@Model.trailer" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </center>
+  <br><br>
+    <hr>
+</article>

@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+ 
+       <div class="" style=" display:inline;">
+           <img class="mySlides" src="/Content/image/s2.jpg" style="margin-left:6%;margin-right:6%;height:350px;width:89%">
+           <img class="mySlides" src="/Content/image/s1.jpg" style="margin-left:6%;margin-right:6%;height:350px;width:89%">
+           <img class="mySlides" src="/Content/image/s3.jpg" style="margin-left:6%;margin-right:6%;height:350px;width:89%">
+           <img class="mySlides" src="/Content/image/s4.jpg" style="margin-left:6%;margin-right:6%;height:350px;width:89%">
+           <img class="mySlides" src="/Content/image/s5.jpg" style="margin-left:6%;margin-right:6%;height:350px;width:89%">
+           <img class="mySlides" src="/Content/image/s6.jpg" style="margin-left:6%;margin-right:6%;height:350px;width:89%">
+           <img class="mySlides" src="/Content/image/s7.jpg" style="margin-left:6%;margin-right:6%;height:350px;width:89%">
+
+       </div>
+
+       <script>
+                var myIndex = 0;
+                carousel();
+                function inc(){
+                    if(myIndex > 1)
+                        myIndex=x.length;
+                        carousel();
+                    }
+                function carousel() {
+                    var i;
+                    var x = document.getElementsByClassName("mySlides");
+                    for (i = 0; i < x.length; i++) {
+                       x[i].style.display = "none";  
+                    }
+                    myIndex++;
+                    if (myIndex > x.length) {myIndex = 1}    
+                    x[myIndex-1].style.display = "block";  
+                    setTimeout(carousel, 5000); // Change image every 2 seconds
+                }
+
+        </script>
+
+
+
+
+		<article style="margin-left:6%;margin-right:8%;width:87%">
+                    
+           @foreach (var s in Model)
+           { 
+            <a href="/Home/Movie/@s.Id">
+            <fieldset  style="border-color:black ;border-radius: 10px;padding: 15px;margin:10px">
+                    <img class="image" src="@s.picture" alt="" style="margin-right:10px;border-radius:15px;width:200px;height:180px;float:left">
+                    <h1 style="color:black">@s.name</h1><br>
+                    <p>        
+                    @s.review       
+                    </p>        
+            </fieldset>
+            </a>
+           }      
+
+                
+		</article>
+
+
+

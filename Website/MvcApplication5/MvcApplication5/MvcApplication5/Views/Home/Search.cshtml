@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Search";
+}
+
+<style>
+
+
+nav {
+    float: left;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+
+}
+     #select a:hover{
+         font-size:20px;
+     }
+     
+
+
+</style>
+<article id="select" style="min-height:62%;margin-left:6%;margin-right:8%;width:87%">
+
+    @{
+        string name = ViewBag.toS;
+        bool flag=false;
+        foreach (var s in Model)
+           {
+               if (s.name.ToLower().Equals(name.ToString().ToLower()))
+            {
+                flag = true;
+            <a href="/Home/Movie/@s.Id">
+            <fieldset  style="border-color:black ;border-radius: 10px;padding: 15px;margin:10px">
+                    <img class="image" src="@s.picture" alt="" style="margin-right:10px;border-radius:15px;width:200px;height:180px;float:left">
+                    <h1 style="color:black">@s.name</h1><br>
+                    <p>        
+                    @s.review       
+                    </p>        
+            </fieldset>
+            </a>
+                }
+           }
+           
+           if(!flag)
+           {
+                <h1 style="font-size:48px;">Sorry "@ViewBag.toS" movie not Found! </h1>
+           }
+                
+        
+        
+     }
+
+</article>
