@@ -1,5 +1,0 @@
-admin@gmail.com 1234567
-admin@gmail.com lol
-admin@yahoo.com	12345
-admin@yahoo.com 1234567lol
-admin@gmail.com 12345
