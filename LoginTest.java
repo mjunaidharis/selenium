@@ -23,7 +23,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 
 public class LoginTest {
 	@Test
-	public void f() throws InterruptedException {
+	public void f() throws Exception {
 		WebDriver driver;
 		File file = new File("C:/MicrosoftWebDriver.exe");
 		System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
@@ -33,7 +33,38 @@ public class LoginTest {
 		driver.get(url);
 
 		Login login = new Login(driver);
-		login.loginuser("admin@gmail.com", "12345");
-		System.out.println(driver.getTitle());
+
+		/*
+		 * NOW WE WILL LOGIN INVALID USERS
+		 */
+
+		Scanner scan = new Scanner(new File("login_invalid.txt"));
+
+		while (scan.hasNextLine()) {
+			String id = scan.nextLine();
+			String pass = scan.nextLine();
+
+			login.loginuser(id, pass);
+			Assert.assertEquals(driver.getTitle(), "Sign in");
+		}
+
+		scan.close();
+		
+		/*
+		 * 	NOW WE WILL LOGIN VALID USERS
+		 */
+		
+		scan = new Scanner(new File("login_valid.txt"));
+
+		while (scan.hasNextLine()) {
+			String id = scan.nextLine();
+			String pass = scan.nextLine();
+
+			login.loginuser(id, pass);
+			Assert.assertEquals(driver.getTitle(), "Admin");
+			driver.findElement(By.partialLinkText("Logout")).click();
+		}
+
+		scan.close();
 	}
 }
