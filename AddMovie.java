@@ -52,6 +52,13 @@ public class AddMovie {
 		Thread.sleep(2000);
 	}
 
+	boolean find(String name) {
+		//To be Implemented
+		
+		return false;
+	}
+	
+	
 	public static void main(String[] args) throws InterruptedException {
 		WebDriver driver;
 		File file = new File("C:/MicrosoftWebDriver.exe");
@@ -63,7 +70,8 @@ public class AddMovie {
 		Thread.sleep(2000);
 		AddMovie a = new AddMovie(driver);
 		a.loginuser("admin@gmail.com", "12345");
-		a.InsertMovie("test1","2018","/Content/image/abcd2.png","test","test","test","test","test");
+		//a.InsertMovie("test1","2018","/Content/image/abcd2.png","test","test","test","test","test");
+		//a.find("test1");
 	}
 
 }

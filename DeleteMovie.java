@@ -45,6 +45,12 @@ public class DeleteMovie {
 //		System.out.println(Mname+"_delete");
 	}
 
+	boolean find(String name) {
+		/*to be implemented*/
+		
+		return false;
+	}
+	
 	public static void main(String[] args) throws InterruptedException {
 		WebDriver driver;
 		File file = new File("C:/MicrosoftWebDriver.exe");

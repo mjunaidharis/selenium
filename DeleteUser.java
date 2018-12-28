@@ -42,6 +42,12 @@ public class DeleteUser {
 		Thread.sleep(2000);
 	}
 
+	boolean find(String fname) {
+		/*to be implemented*/
+		
+		return false;
+	}
+	
 	public static void main(String[] args) throws InterruptedException {
 		WebDriver driver;
 		File file = new File("C:/MicrosoftWebDriver.exe");

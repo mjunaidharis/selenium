@@ -23,15 +23,12 @@ public class AddUser {
 
 	boolean gotoAddUserPage() {
 		if (driver.getTitle().equalsIgnoreCase("admin" + "_adduser")) {
-<<<<<<< HEAD
 			return true;
 		}
 		if (!driver.getTitle().contains("Admin")) {
-=======
 			return false;
 		}
 		if (!driver.getTitle().equalsIgnoreCase("Admin")) {
->>>>>>> 5161ebd63b1ca57e3165d17d6678cc925ea2de1e
 			// not signed in
 			return false;
 		}
@@ -51,6 +48,12 @@ public class AddUser {
 		Thread.sleep(2000);
 	}
 
+	boolean find(String fname) {
+		/*to be implemented*/
+		
+		return false;
+	}
+	
 	public static void main(String[] args) throws InterruptedException {
 		WebDriver driver;
 		File file = new File("C:/MicrosoftWebDriver.exe");
