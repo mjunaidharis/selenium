@@ -16,7 +16,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 public class Login {
 	WebDriver driver = null;
 
-	Login() throws InterruptedException {		
+	Login(WebDriver driver) throws InterruptedException {		
+		this.driver=driver;
 		goToSignInPage();
 	}
 
@@ -38,8 +39,6 @@ public class Login {
 
 
 	public static void main(String[] args) throws InterruptedException {
-		driver = new FirefoxDriver();
-		Login();
-		loginuser("Ajmal","hotguy372@gmail.com")
+		
 	}
 }
