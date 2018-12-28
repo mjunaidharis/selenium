@@ -16,8 +16,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 public class Login {
 	WebDriver driver = null;
 
-	Login(WebDriver driver) throws InterruptedException {
-		this.driver = driver;
+	Login(WebDriver driver) throws InterruptedException {		
+		this.driver=driver;
 		goToSignInPage();
 	}
 
@@ -28,8 +28,7 @@ public class Login {
 		driver.findElement(By.cssSelector("#signin1")).click();
 		Thread.sleep(2000);
 	}
-
-	void loginuser(String name, String pass) throws InterruptedException {
+		void loginuser(String name, String pass) throws InterruptedException {
 		goToSignInPage();
 		driver.findElement(By.cssSelector("#email")).sendKeys(name);
 		driver.findElement(By.cssSelector("#pass")).sendKeys(pass);
@@ -37,6 +36,9 @@ public class Login {
 		Thread.sleep(3000);
 	}
 
+
+
 	public static void main(String[] args) throws InterruptedException {
+		
 	}
 }
