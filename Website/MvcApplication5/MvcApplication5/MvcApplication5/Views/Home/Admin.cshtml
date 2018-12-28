@@ -11,7 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>SB Admin - Start Bootstrap Template</title>
+  <title>Admin</title>
   <!-- Bootstrap core CSS-->
   <link href="/Content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
@@ -112,14 +112,17 @@
               <tbody>
                 @foreach(var s in Model)
                 {
+                    var x = s.Name + "_update";
+                    var y = s.Name + "_delete";
                  <tr>   
                 <td >@s.Id</td>    
                 <td >@s.Name</td>
                 <td >@s.Email</td>
                 <td >@s.Pass</td>
-                <td ><a href="/Home/UpdateUser/@s.Id"><center><img src="~/Content/image/edit.svg" style="text-align:center;height:20px;width:20px"></center></a></td>
                      
-                <td ><a href="/Home/DeleteUser/@s.Id"><center><img src="~/Content/image/delete.png" style="text-align:center;height:20px;width:20px"></center></a></td>
+                <td id=@x><a href="/Home/UpdateUser/@s.Id"><center><img src="~/Content/image/edit.svg" style="text-align:center;height:20px;width:20px"></center></a></td>
+                     
+                <td id=@y><a href="/Home/DeleteUser/@s.Id"><center><img src="~/Content/image/delete.png" style="text-align:center;height:20px;width:20px"></center></a></td>
                      
                  </tr>
                 }

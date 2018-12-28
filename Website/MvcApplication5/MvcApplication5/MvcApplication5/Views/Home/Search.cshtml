@@ -32,7 +32,7 @@ nav {
             <a href="/Home/Movie/@s.Id">
             <fieldset  style="border-color:black ;border-radius: 10px;padding: 15px;margin:10px">
                     <img class="image" src="@s.picture" alt="" style="margin-right:10px;border-radius:15px;width:200px;height:180px;float:left">
-                    <h1 style="color:black">@s.name</h1><br>
+                    <h2 id="notfound" style="color:black">@s.name</h2><br>
                     <p>        
                     @s.review       
                     </p>        
@@ -43,7 +43,7 @@ nav {
            
            if(!flag)
            {
-                <h1 style="font-size:48px;">Sorry "@ViewBag.toS" movie not Found! </h1>
+                <h2 id="notfound" style="font-size:48px;">Sorry "@ViewBag.toS" movie not Found! </h2>
            }
                 
         

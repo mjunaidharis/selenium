@@ -101,11 +101,13 @@
               <tbody>
                 @foreach(var s in Model)
                 {
+                    var x = s.Name + "_update";
+                    var y = s.Name + "_delete";
                  <tr>   
                 <td >@s.Id</td>    
                 <td >@s.name</td>
-                <td ><a href="/Home/UpdateMovie/@s.Id">Update</a></td>
-                <td ><a href="/Home/DeleteMovie/@s.Id">Delete</a></td>
+                <td id=@x><a href="/Home/UpdateMovie/@s.Id">Update</a></td>
+                <td id=@y><a href="/Home/DeleteMovie/@s.Id">Delete</a></td>
 
                        
                  </tr>
