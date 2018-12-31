@@ -52,20 +52,20 @@ public class DeleteMovie {
 	}
 	
 	public static void main(String[] args) throws InterruptedException {
-		WebDriver driver;
+		WebDriver driverr;
 		File file = new File("C:/MicrosoftWebDriver.exe");
 		System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
 		String url = "http://localhost:1572/";
 
-		driver = new EdgeDriver();
-		driver.get(url);
+		driverr = new EdgeDriver();
+		driverr.get(url);
 		Thread.sleep(2000);
 
-		AddMovie a = new AddMovie(driver);
+		AddMovie a = new AddMovie(driverr);
 		a.loginuser("admin@gmail.com", "12345");
 		// a.InsertMovie("test1","2018","/Content/image/abcd2.png","test","test","test","test","test");
 
-		DeleteMovie a1 = new DeleteMovie(driver);
+		DeleteMovie a1 = new DeleteMovie(driverr);
 		a1.RemoveMovie("test1");
 	}
 }
